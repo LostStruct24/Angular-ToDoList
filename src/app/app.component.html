@@ -1,0 +1,33 @@
+<div class="main">
+
+  <div class="left">
+
+    <div class="title-div">
+
+      <img class="leaf" src="../assets/images/flower_leaf_2.svg">
+      <h1>To Do List</h1>
+      <img class="leaf" src="../assets/images/flower_leaf_1.svg">
+      
+    </div>
+
+    <div class="input-div">
+      <input type="text" #newItem placeholder="Add a New Item" (keyup.enter)="addItem(newItem.value); newItem.value=''" class="text-input" id="addItemInput" required/>
+      <label class="input-label" for="addItemInput">Add a New Item</label>
+    </div>
+
+    <button class="btn" (click)="addItem(newItem.value)"><div class="button-div">Add <img class="pencil" src="../assets/images/pencil.svg"></div></button>
+    <img class="to-do" src="../assets/images/todolist.jpg">
+
+  </div>
+
+  <div class="right">
+
+    <ul>
+      <li *ngFor="let item of items"><img class="star" src="../assets/images/star.svg"><p>{{item.title}}</p></li>
+    </ul>
+
+    <img class="flower" src="../assets/images/flower_leaf_3.svg">
+
+  </div>
+
+</div>
